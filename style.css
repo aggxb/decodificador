@@ -31,7 +31,7 @@ body {
   display: flex;
   flex-direction: row;
   gap: 40px;
-  max-width: 1200px;
+  max-width: 1440px;
   height: 85vh;
   padding: 10px 20px;
   margin: 0 auto;
@@ -46,16 +46,22 @@ body {
   padding: 20px;
 }
 
-.text {
-  font-size: 2rem;
-  font-weight: 400;
+#mensagem {
+  resize: none;
+  border: none;
+  outline: none;
+  background: var(--main);
   color: var(--high3);
+  font-size: 1.75rem;
+  font-weight: 400;
+  text-wrap: wrap;
 }
 
 .btn-area {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin-top: 16px;
 }
 
 .warning {
@@ -78,7 +84,7 @@ body {
 
 .btn {
   font-size: 1rem;
-  padding: 1vw 3vw;
+  padding: 15px 3vw;
   border-radius: 24px;
   margin-top: 16px;
   cursor: pointer;
@@ -90,10 +96,20 @@ body {
   border: 2px solid var(--high1);
 }
 
+.btn.criptografar:hover {
+  background: var(--high2);
+  color: var(--high1);
+}
+
 .btn.descriptografar {
   background: var(--high3);
   color: var(--high1);
   border: 2px solid var(--high1);
+}
+
+.btn.descriptografar:hover {
+  background: var(--high2);
+  color: var(--high1);
 }
 
 .text-box {
@@ -154,6 +170,9 @@ body {
 @media(max-width: 600px) {
   .container {
     gap: 20px;
+  }
+  #mensagem {
+    font-size: 1.25rem;
   }
   .buttons {
     flex-direction: column;
