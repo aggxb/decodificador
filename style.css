@@ -113,8 +113,10 @@ body {
 }
 
 .text-box {
+  position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -124,7 +126,6 @@ body {
 }
 
 .text-display {
-  margin-top: 32px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -133,6 +134,7 @@ body {
 .text-display h2 {
   font-size: 1.5rem;
   font-weight: 700;
+  margin-top: 32px;
   color: var(--white);
 }
 
@@ -142,12 +144,30 @@ body {
   color: var(--white);
 }
 
+.btn.copiar {
+  position: absolute;
+  display: none;
+  bottom: 20px;
+  padding: 15px 5vw;
+  background: var(--high3);
+  color: var(--high1);
+  border: 2px solid var(--high3);
+}
+
+.text-box.ativo > .btn.copiar {
+  display: block;
+}
+
 @media(max-width: 800px) {
   .container {
     flex-direction: column;
   }
   .text-area {
     padding-top: 10px;
+    justify-content: start;
+  }
+  #mensagem {
+    font-size: 1.5rem;
   }
   .buttons {
     justify-content: space-between;
@@ -158,11 +178,16 @@ body {
   }
   .text-box {
     padding: 40px;
+    gap: 32px;
   }
-  .text-box > img {
+  .text-display h2{
+    margin-top: 0;
+  }
+  .text-display > img {
     display: none;
   }
-  .text-display {
+  .text-box > .btn.copiar {
+    position: initial;
     margin-top: 0;
   }
 }
