@@ -32,7 +32,6 @@ body {
   flex-direction: row;
   gap: 40px;
   max-width: 1440px;
-  height: 85vh;
   padding: 10px 20px;
   margin: 0 auto;
 }
@@ -113,13 +112,13 @@ body {
 }
 
 .text-box {
-  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   justify-content: center;
   align-items: center;
   text-align: center;
+  max-width: 520px;
+  min-height: 80vh;
   padding: 20px;
   border-radius: 32px;
   background: var(--sec);
@@ -131,7 +130,7 @@ body {
   gap: 12px;
 }
 
-.text-display h2 {
+.text-display-mensagem {
   font-size: 1.5rem;
   font-weight: 700;
   margin-top: 32px;
@@ -145,17 +144,11 @@ body {
 }
 
 .btn.copiar {
-  position: absolute;
   display: none;
-  bottom: 20px;
   padding: 15px 5vw;
   background: var(--high3);
   color: var(--high1);
   border: 2px solid var(--high3);
-}
-
-.text-box.ativo > .btn.copiar {
-  display: block;
 }
 
 @media(max-width: 800px) {
@@ -179,8 +172,9 @@ body {
   .text-box {
     padding: 40px;
     gap: 32px;
+    min-height: 0;
   }
-  .text-display h2{
+  .text-display-mensagem {
     margin-top: 0;
   }
   .text-display > img {
@@ -206,4 +200,29 @@ body {
   .btn.descriptografar {
     margin-top: 0;
   }
+}
+
+.text-box.ativo {
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.text-box.ativo img {
+  display: none;
+}
+
+.text-box.ativo .text-display-mensagem {
+  font-weight: 400;
+  text-align: left;
+  word-break: break-all;
+  margin-top: 8px;
+}
+
+.text-box.ativo p {
+  display: none;
+}
+
+.text-box.ativo > .btn.copiar {
+  display: block;
+  margin-top: 0;
 }
