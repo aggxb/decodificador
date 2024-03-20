@@ -202,6 +202,15 @@ body {
   }
 }
 
+@media(max-width: 400px) {
+  .container {
+    padding: 5px 10px;
+  }
+  .text {
+    height: 300px;
+  }
+}
+
 .text-box.ativo {
   justify-content: space-between;
   gap: 32px;
